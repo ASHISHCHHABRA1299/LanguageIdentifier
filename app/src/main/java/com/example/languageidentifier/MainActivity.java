@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.ml.naturallanguage.FirebaseNaturalLanguage;
 import com.google.firebase.ml.naturallanguage.languageid.FirebaseLanguageIdentification;
 
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                                     @Override
                                     public void onSuccess(@Nullable String languageCode) {
                                         if (languageCode != "und") {
-                                            t.setText(languageCode);
+                                            t.setText(languageCode.toUpperCase());
                                         } else {
                                             t.setText("Can't identify language.");
                                         }
